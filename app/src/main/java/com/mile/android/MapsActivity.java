@@ -9,7 +9,9 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.mile.android.R;
+import com.mile.android.utils.GooglePlayServices;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -19,6 +21,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        //Check google play Availability
+        googlePlayAvailability();
+
+        //get fcm token
+        String id = FirebaseInstanceId.getInstance().getToken();
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -43,5 +51,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        googlePlayAvailability();
+    }
+
+    private void googlePlayAvailability(){
+        if(!GooglePlayServices.checkGooglePlayServiceAvailability(this)){
+            GooglePlayServices.openGooglePlayService(this);
+        }
     }
 }

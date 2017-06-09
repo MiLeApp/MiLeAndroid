@@ -28,5 +28,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.google.android.gms:play-services-maps:10.2.4'
     compile 'com.google.firebase:firebase-messaging:10.2.4'
+    compile 'com.firebase:firebase-jobdispatcher:0.6.0'
 }
 apply plugin: 'com.google.gms.google-services'
