@@ -1,4 +1,4 @@
-package com.mile.android.mile;
+package com.mile.android;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

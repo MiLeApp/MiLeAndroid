@@ -1,4 +1,4 @@
-package com.mile.android.mile;
+package com.mile.android;
 
 import org.junit.Test;
 
