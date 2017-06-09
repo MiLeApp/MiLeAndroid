@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "186977183063",
+    "firebase_url": "https://milefreeplan.firebaseio.com",
+    "project_id": "milefreeplan",
+    "storage_bucket": "milefreeplan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186977183063:android:9e099ce46e7ac785",
+        "android_client_info": {
+          "package_name": "com.mile.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "186977183063-46q676qf7fusopl30e8sm3kqfib320qo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mile.android",
+            "certificate_hash": "409a55faf0b06e6e35093ce64c76401ec6d88854"
+          }
+        },
+        {
+          "client_id": "186977183063-lh9l5aa2lnjp58lu9pvap2hqmva6efdg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnmYbm_FSa_9nM5jkVDp8iJPlLLXynGkk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "186977183063-lh9l5aa2lnjp58lu9pvap2hqmva6efdg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
