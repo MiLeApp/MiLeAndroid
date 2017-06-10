@@ -57,6 +57,7 @@ public class MiLeFirebaseMessagingService extends FirebaseMessagingService {
                 // Handle message within 10 seconds
                 handleNow();
             }
+            sendNotification(remoteMessage.getMessageId());
 
         }
 

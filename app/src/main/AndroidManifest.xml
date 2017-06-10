@@ -23,12 +23,18 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name="com.mile.android.MapsActivity" android:label="@string/title_activity_maps">
+
+        </activity>
+        <activity
+            android:name=".PhoneAuthActivity"
+            android:label="@string/label_phone_auth">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service
             android:name=".firebase.MiLeFirebaseMessagingService">
             <intent-filter>
