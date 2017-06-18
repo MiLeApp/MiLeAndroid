@@ -1,4 +1,4 @@
-package com.mile.android;
+package com.mile.android.activity;
 
 /**
  * Created by yacovyitzhak on 10/06/2017.
@@ -28,6 +28,7 @@ import com.google.firebase.auth.GetTokenResult;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.mile.android.R;
 
 import java.util.concurrent.TimeUnit;
 
@@ -196,6 +197,7 @@ public class PhoneAuthActivity extends AppCompatActivity implements
         // [START_EXCLUDE]
         if (mVerificationInProgress && validatePhoneNumber()) {
             startPhoneNumberVerification(mPhoneNumberField.getText().toString());
+
         }
         // [END_EXCLUDE]
     }

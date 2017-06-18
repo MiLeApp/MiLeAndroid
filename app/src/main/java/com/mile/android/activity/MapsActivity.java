@@ -1,4 +1,4 @@
-package com.mile.android;
+package com.mile.android.activity;
 
 import android.app.NotificationManager;
 import android.os.Build;
