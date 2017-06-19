@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MiLe</string>
+    <string name="app_name">RideApp</string>
     <string name="title_activity_maps">Map</string>
     <string name="desc_firebase_lockup">Firebase logo and name</string>
     <string name="phone_title_text">Phone Number</string>

@@ -1,7 +1,10 @@
 package com.mile.android.activity;
 
+import android.app.Activity;
 import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,9 +19,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.mile.android.OnListFragmentInteractionListener;
 import com.mile.android.R;
+import com.mile.android.entities.db.UserTable;
 import com.mile.android.fragment.EventItemFragment;
 import com.mile.android.fragment.dummy.DummyContent;
 
@@ -38,6 +43,8 @@ public class MainActivity extends AppCompatActivity implements OnListFragmentInt
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+    private Button buttonInviteUsers;
+    Toolbar toolbar ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +52,10 @@ public class MainActivity extends AppCompatActivity implements OnListFragmentInt
         handleIntent(getIntent());
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -69,8 +78,22 @@ public class MainActivity extends AppCompatActivity implements OnListFragmentInt
             }
         });
 
+
+        SharedPreferences sharedPref = MainActivity.this.getSharedPreferences("APP", Context.MODE_PRIVATE);
+        Integer userid = sharedPref.getInt(UserTable.UserTableEntry.COLUMN_NAME_USER_ID, 0);
+        addIconsToTab();
+
     }
 
+    private void addIconsToTab(){
+        //Get reference to your Tablayout
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(mViewPager);
+
+        //tabLayout.getTabAt(0).setIcon(R.drawable.ic;
+        //tabLayout.getTabAt(1).setIcon(R.drawable.ic_pointopoint75trans);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_action_1497877925_fez_04).setText("חברה");
+    }
     @Override
     protected void onNewIntent(Intent intent) {
 
@@ -155,4 +178,17 @@ public class MainActivity extends AppCompatActivity implements OnListFragmentInt
             return 3;
         }
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 1) {
+            if(resultCode == Activity.RESULT_OK){
+                String[] result = data.getStringArrayExtra("result");
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                //Write your code if there's no result
+            }
+        }
+    }//onActivityResult
 }

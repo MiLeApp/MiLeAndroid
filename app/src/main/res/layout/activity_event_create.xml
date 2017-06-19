@@ -7,7 +7,7 @@
     tools:context="com.mile.android.activity.EventDetailsDriverActivity">
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editTextEventName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -21,79 +21,67 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="124dp"
+    <Button
+        android:id="@+id/buttonDate"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="date"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="32dp" />
-
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="155dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="date"
-        app:layout_constraintEnd_toStartOf="@+id/editText3"
-        android:layout_marginEnd="4dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        android:layout_marginStart="16dp"
+        android:text="Date"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="8dp" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonTime"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="0.683"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEventName" />
+
+    <Button
+        android:id="@+id/buttonTime"
+        android:layout_width="87dp"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="84dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEventName" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/editTextPlace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:hint="Event Place"
         android:inputType="textPersonName"
-        android:text="Place"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonDate" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/buttonInviteUsers"
+        android:layout_width="212dp"
         android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/ic_input_add"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/editText6"
-        app:layout_constraintEnd_toStartOf="@+id/editText7"
         android:layout_marginEnd="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="8dp" />
-
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="User"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="60dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+        android:text="Invite Users"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPlace"
+        tools:layout_editor_absoluteX="24dp" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/imageButtonSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="?attr/actionModeShareDrawable"
-        android:layout_marginTop="56dp"
-        app:layout_constraintTop_toBottomOf="@+id/editText7"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonInviteUsers"
+        app:srcCompat="@android:drawable/ic_menu_send" />
 
 </android.support.constraint.ConstraintLayout>

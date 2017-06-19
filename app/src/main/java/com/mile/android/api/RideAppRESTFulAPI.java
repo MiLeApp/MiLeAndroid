@@ -9,10 +9,9 @@ public class RideAppRESTFulAPI {
     private static final String URL = "http://104.154.69.54/api";
 
     private static String EXT_URL;
+    public static final String ACTION_GROUP_USERS = "GroupUsers";
     public static final String ACTION_GROUP = "group";
-    public static final String ACTION_VOUCHER = "voucher";
-    public static final String ACTION_HALL = "hall";
-
+    public static final String ACTION_USER = "user";
     public static String getURL(){
         if (EXT_URL == null){
             return URL;

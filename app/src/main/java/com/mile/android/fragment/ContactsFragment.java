@@ -1,5 +1,6 @@
 package com.mile.android.fragment;
 
+import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -7,7 +8,7 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.support.v4.app.Fragment;
+
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -50,6 +51,7 @@ public class ContactsFragment extends Fragment {
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
     public static ContactsFragment newInstance(int columnCount) {
+
         ContactsFragment fragment = new ContactsFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
@@ -86,6 +88,9 @@ public class ContactsFragment extends Fragment {
         return view;
     }
 
+    public List<Contact> getContacts(){
+        return contacts;
+    }
 
     @Override
     public void onAttach(Context context) {
@@ -117,6 +122,7 @@ public class ContactsFragment extends Fragment {
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
         void onListFragmentInteraction(Contact item);
+
     }
 
 
@@ -153,7 +159,7 @@ public class ContactsFragment extends Fragment {
         }
         public List<Contact> getContacts(ContentResolver cr)
         {
-            List<Contact> contacts = new ArrayList<>();
+            contacts = new ArrayList<>();
 
             Cursor phones = cr.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null,null,null, null);
             // use the cursor to access the contacts
@@ -190,7 +196,7 @@ public class ContactsFragment extends Fragment {
         protected void onPostExecute(Integer result) {
             super.onPostExecute(result);
 
-            recyclerView.setAdapter(new ContactItemRecyclerViewAdapter(contacts, mListener,ContactsFragment.this.getContext()));
+            recyclerView.setAdapter(new ContactItemRecyclerViewAdapter(contacts, mListener,ContactsFragment.this.getActivity()));
             recyclerView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener()
             {
                 @Override
